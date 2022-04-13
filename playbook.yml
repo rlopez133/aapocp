@@ -1,0 +1,9 @@
+---
+- name: OpenShift Configuration Playbook
+  hosts: all
+  become: true
+  tasks:
+    - name: Apply definition from a local file
+      kubernetes.core.k8s:
+        state: present
+        src: /files/deployment.yml
